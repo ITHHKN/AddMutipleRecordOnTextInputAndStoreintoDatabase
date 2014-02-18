@@ -1,0 +1,16 @@
+<?php
+
+	$conn=	mysql_connect('localhost','root','') or mysql_error();
+	mysql_select_db('schoolsystem',$conn) or mysql_error();
+	
+    $Get = $_POST['AddFeild'];
+	//Print_r($Get);exit;
+	//$val = implode(',' ,$Get);
+	foreach($Get as $value){
+		$query = "insert into courses (Userid,CourseId,Couses) values ('1','NULL','$value')";
+		//echo $query; 
+		mysql_query($query) or die(mysql_error());
+		//echo $SQL;
+		}
+	
+?>
